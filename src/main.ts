@@ -19,8 +19,8 @@ class Controller {
 // console.log(`Listening on http://localhost:${port}`)
 // await serve(handler, { addr: `localhost:${port}` })
 
-import { Application, Router } from 'oka'
-import { viewEngine, engineFactory, adapterFactory } from 'view_engine'
+import { Application, Router } from 'https://deno.land/x/oak/mod.ts'
+import { viewEngine, engineFactory, adapterFactory } from 'https://deno.land/x/view_engine/mod.ts'
 
 const router = new Router()
 
