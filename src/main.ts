@@ -34,18 +34,18 @@ class Controller {
 // await serve(handler, { addr: `localhost:${port}` })
 
 import { Application, Router } from 'https://deno.land/x/oak/mod.ts'
-import { viewEngine, engineFactory, adapterFactory } from 'https://deno.land/x/view_engine/mod.ts'
+// import { viewEngine, engineFactory, adapterFactory } from 'https://deno.land/x/view_engine/mod.ts'
 
 const router = new Router()
 
 router.get('/', Controller.getData)
 
-const ejsEngine = engineFactory.getEjsEngine()
-const oakAdapter = adapterFactory.getOakAdapter()
+// const ejsEngine = engineFactory.getEjsEngine()
+// const oakAdapter = adapterFactory.getOakAdapter()
 
 const app = new Application()
 
-app.use(viewEngine(oakAdapter, ejsEngine))
+// app.use(viewEngine(oakAdapter, ejsEngine))
 app.use(router.routes())
 app.use(router.allowedMethods())
 
