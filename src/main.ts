@@ -1,7 +1,17 @@
 // import { serve } from 'server'
 
-// const port = 8888
+const port = 8888
+const { cwd } = Deno
 
+class Controller {
+  static getData(ctx: any) {
+    //cwd获取当前工程目录
+    ctx.render(`${cwd()}/src/views/index.html`, {
+      title: 'Testing',
+      data: { name: 'deepincoding.com' }
+    })
+  }
+}
 // function handler(req: any) {
 //   return new Response('my first deno project aaaad!')
 // }
@@ -9,16 +19,22 @@
 // console.log(`Listening on http://localhost:${port}`)
 // await serve(handler, { addr: `localhost:${port}` })
 
-import { Application } from 'oka'
+import { Application, Router } from 'oka'
 import { viewEngine, engineFactory, adapterFactory } from 'view_engine'
-import router from './routes/mod.ts'
+
+const router = new Router()
+
+router.get('/', Controller.getData)
 
 const ejsEngine = engineFactory.getEjsEngine()
 const oakAdapter = adapterFactory.getOakAdapter()
 
 const app = new Application()
+
 app.use(viewEngine(oakAdapter, ejsEngine))
 app.use(router.routes())
 app.use(router.allowedMethods())
 
-await app.listen({ port: 8000 })
+console.log(`Listening on http://localhost:${port}`)
+
+await app.listen({ port })
