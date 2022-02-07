@@ -6,7 +6,7 @@ const { cwd } = Deno
 class Controller {
   static getData(ctx: any) {
     //cwd获取当前工程目录
-    ctx.render(`${cwd()}/src/views/index.html`, {
+    ctx.render(`${cwd()}/src/views/index.ejs`, {
       title: 'Testing',
       data: { name: 'deepincoding.com' }
     })
