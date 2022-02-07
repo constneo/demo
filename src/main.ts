@@ -5,11 +5,25 @@ const { cwd } = Deno
 
 class Controller {
   static getData(ctx: any) {
+    console.log('%c [ ctx ]-8', 'font-size: px; color:#bf2c9f;', JSON.stringify(ctx))
     //cwd获取当前工程目录
-    ctx.render(`${cwd()}/src/views/index.ejs`, {
-      title: 'Testing',
-      data: { name: 'deepincoding.com' }
-    })
+    // ctx.render(`${cwd()}/src/views/index.ejs`, {
+    //   title: 'Testing',
+    //   data: { name: 'deepincoding.com' }
+    // })
+    ctx.response.body = `<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+      </head>
+      <body>
+        测试
+      </body>
+    </html>
+    `
   }
 }
 // function handler(req: any) {
