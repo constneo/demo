@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "lodash": "https://cdn.skypack.dev/lodash",
+    "oka": "https://deno.land/x/oak/mod.ts",
+    "server": "https://deno.land/std@0.114.0/http/server.ts",
+    "view_engine": "https://deno.land/x/view_engine/mod.ts"
+  }
+}
