@@ -1,0 +1,24 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "deno",
+  "homepage": "https://github.com/constneo/demo#readme",
+  "bugs": {
+    "url": "https://github.com/constneo/demo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/constneo/demo.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.3",
+    "hono": "^4.13.11"
+  }
+}
